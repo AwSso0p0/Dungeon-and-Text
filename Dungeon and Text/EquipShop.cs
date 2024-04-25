@@ -30,7 +30,6 @@ namespace Dungeon_and_Text
             Console.WriteLine();
 
             Console.WriteLine("[아이템 목록]");
-            
 
         }
     }
@@ -52,7 +51,6 @@ internal class Shop : ItemData
     public Shop()
     {
         string getItemData = GetItemData();
-        playergold = 800;
         Console.Clear();
         Console.WriteLine("[상점]");
         Console.WriteLine("필요한 아이템을 얻을 수 있는 상점입니다");
@@ -86,13 +84,11 @@ internal class BuyingRoom : ItemData
 {
     public BuyingRoom()
     {
-        playergold = 800;
-        int select = -1;
+        List<ItemData> itemList = itemData1();
         string getItemData = GetItemData();
-        var itemdata = 
-        
-        
+        int select = -1;
 
+        
 
         while (select != 0)
         {
@@ -119,7 +115,7 @@ internal class BuyingRoom : ItemData
                 if (playergold >= 3000)
                 {
                     playergold -= 3000;
-                    buying = true;
+                    itemList[1].buying = true;
                 }
                 else 
                 {
@@ -133,7 +129,7 @@ internal class BuyingRoom : ItemData
                 if (playergold >= 1000)
                 {
                     playergold -= 1000;
-                    itemList[1].buying = true;
+                    itemList[2].buying = true;
                 }
                 else
                 {
@@ -147,7 +143,7 @@ internal class BuyingRoom : ItemData
                 if (playergold >= 5000)
                 {
                     playergold -= 5000;
-                    buying = true;
+                    itemList[3].buying = true;
                 }
                 else
                 {
@@ -161,7 +157,7 @@ internal class BuyingRoom : ItemData
                 if (playergold >= 500)
                 {
                     playergold -= 500;
-                    buying = true;
+                    itemList[4].buying = true;
                 }
                 else
                 {

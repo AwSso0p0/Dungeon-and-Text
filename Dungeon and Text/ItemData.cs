@@ -22,7 +22,7 @@ namespace Dungeon_and_Text
         }
 
         public int gold;
-        public int playergold;
+        static public int playergold;
         public int idx;
         public string itemName;
         public int atk;
@@ -33,7 +33,7 @@ namespace Dungeon_and_Text
 
         public ItemData()
         {
-
+            playergold = 800;
         }
 
         public List<ItemData> itemData1()
