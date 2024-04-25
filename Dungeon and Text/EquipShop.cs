@@ -82,13 +82,12 @@ internal class Shop : ItemData
 
 internal class BuyingRoom : ItemData
 {
+    private static List<ItemData> itemList = itemData1();
     public BuyingRoom()
     {
-        List<ItemData> itemList = itemData1();
+
         string getItemData = GetItemData();
         int select = -1;
-
-        
 
         while (select != 0)
         {
@@ -112,58 +111,54 @@ internal class BuyingRoom : ItemData
             }
             else if (select == 1)
             {
-                if (playergold >= 3000)
+                if (playergold >= itemList[1].gold)
                 {
-                    playergold -= 3000;
+                    playergold -= itemList[1].gold;
                     itemList[1].buying = true;
                 }
                 else 
                 {
                     Console.WriteLine("Gold가 부족합니다!");
                     Console.ReadLine();
-                    BuyingRoom buyingRoom = new BuyingRoom();
                 }
             }
             else if (select == 2)
             {
-                if (playergold >= 1000)
+                if (playergold >= itemList[2].gold)
                 {
-                    playergold -= 1000;
+                    playergold -= itemList[2].gold;
                     itemList[2].buying = true;
                 }
                 else
                 {
                     Console.WriteLine("Gold가 부족합니다!");
                     Console.ReadLine();
-                    BuyingRoom buyingRoom = new BuyingRoom();
                 }
             }
             else if (select == 3)
             {
-                if (playergold >= 5000)
+                if (playergold >= itemList[3].gold)
                 {
-                    playergold -= 5000;
+                    playergold -= itemList[3].gold;
                     itemList[3].buying = true;
                 }
                 else
                 {
                     Console.WriteLine("Gold가 부족합니다!");
                     Console.ReadLine();
-                    BuyingRoom buyingRoom = new BuyingRoom();
                 }
             }
             else if (select == 4)
             {
-                if (playergold >= 500)
+                if (playergold >= itemList[4].gold)
                 {
-                    playergold -= 500;
+                    playergold -= itemList[4].gold;
                     itemList[4].buying = true;
                 }
                 else
                 {
                     Console.WriteLine("Gold가 부족합니다!");
                     Console.ReadLine();
-                    BuyingRoom buyingRoom = new BuyingRoom();
                 }
             }
         }    
